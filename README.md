@@ -110,22 +110,8 @@ Key headings discovered in the notebook (markdown):
 - ## Conclusion
 
 ## Datasets
-Refer to the `data/` folder for dataset files. Datasets found (heuristic scan):
-- /content/drive/MyDrive/bigdata/btcusd_1-min_data.csv
+https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data
 
-> **Note:** Do not commit large raw data files to the Git repository. Use Git LFS or provide download instructions in a `DATA.md` file or via cloud storage links.
-
-## Results & deliverables
-Summarize your main results here. Replace the bullets below with your actual findings, figures, and performance metrics.
-
-- Key insight 1 — short description  
-- Key insight 2 — short description  
-- Visualizations and charts are included in the notebook.
-
-## Contributors
-- Group members (see CONTRIBUTORS section)
-
-_Add group roles here (e.g., Data ingestion: Name, EDA: Name, Modeling: Name, Report & README: Name)._
 
 ## Reproducibility tips
 - Pin package versions in `requirements.txt`.
@@ -137,9 +123,4 @@ This project is provided under the MIT License. Replace or change the license fi
 
 ---
 
-If you want, I can:
-- generate a `requirements.txt` from imports detected,
-- create a polished `DATA.md` with dataset download links and structure,
-- produce a short `CONTRIBUTORS.md` with member roles,
-- or format a polished `README.md` in the repository root and save it directly.
 
