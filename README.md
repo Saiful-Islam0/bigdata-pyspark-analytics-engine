@@ -1,126 +1,159 @@
-# Big Data Lab — Final Group Project
+# 📘 PySpark Big Data Analytics Engine
 
-**Course:** Big Data Lab  
-**Project type:** Final Group Project  
 **Notebook:** `pyspark-bigdata-analytics-engine.ipynb`
 
-## Project summary
-Loading the dataset from the specified path into a PySpark DataFrame, inferring the schema, and then perform basic data inspection and null value check. *   The dataset contains 1-minute interval data for BTC/USD with columns: `Timestamp`, `Open`, `High`, `Low`, `Close`, and `Volume`. *   All columns were inferred as `double` type. *   The dataset contains no null values across any of its columns. *   Summary statistics provide insights into the range and central tendency of the numerical columns. *   The absence of null values indicates a clean dataset for initial analysis.
+## Project Summary
+This project performs large-scale data ingestion, preprocessing, feature engineering, and modeling using **PySpark**. The dataset contains **1-minute BTC/USD trading data** with fields such as `Open`, `High`, `Low`, `Close`, and `Volume`.
 
-## Table of contents
-- [About](#about)
-- [Repository structure](#repository-structure)
-- [Requirements](#requirements)
-- [Setup and run](#setup-and-run)
-- [Notebook overview](#notebook-overview)
-- [Datasets](#datasets)
-- [Results & deliverables](#results--deliverables)
-- [Contributors](#contributors)
-- [License](#license)
-- [Contact](#contact)
+Key steps include:
 
-## About
-This repository hosts the code, notebooks, and documentation for the Big Data Lab final group project. The project demonstrates end-to-end big data workflows: ingesting data, processing/cleaning, scalable analysis (Spark), model building or aggregations, and visualization of results. The primary work is contained in the Jupyter notebook `BIGDATALABFINALGROUP.ipynb`.
-
-## Repository structure
-```
-/                - repository root
-├─ BIGDATALABFINALGROUP.ipynb   - main notebook with the full project workflow
-├─ data/                         - recommended location for input datasets (not included)
-├─ notebooks/                     - (optional) supporting notebooks
-├─ src/                           - (optional) python modules or scripts
-├─ requirements.txt               - Python dependencies
-└─ README_BIGDATALLAB.md         - this file
-```
-
-## Requirements
-The notebook uses the following Python libraries (detected from the notebook or commonly used in big-data notebooks):
-
-matplotlib, networkx, numpy, pandas, pyspark, scipy, seaborn
-
-We recommend creating a virtual environment and installing dependencies before running the notebook. Example:
-
-```bash
-python -m venv venv
-source venv/bin/activate      # Linux / macOS
-venv\Scripts\activate       # Windows
-pip install -r requirements.txt
-```
-
-If you do not have a `requirements.txt`, you can create one with the libraries above, for example:
-
-```
-pyspark
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-```
-
-Adjust the list depending on the notebook imports and whether you run on a local Spark installation or a cluster.
-
-## Setup and run
-1. Clone the repository:
-```bash
-git clone https://github.com/Saiful-Islam0/bigdata-pyspark-analytics-engine.git
-cd bigdata-pyspark-analytics-engine
-```
-
-2. Place datasets in the `data/` folder. The notebook references dataset files; if you don't have them, update the paths accordingly.
-
-3. Start Jupyter Notebook / Lab:
-```bash
-jupyter lab
-# or
-jupyter notebook
-```
-
-4. Open `BIGDATALABFINALGROUP.ipynb` and run cells in order. If the notebook uses PySpark, ensure `SPARK_HOME` is set and the PySpark environment is configured (or run with `pyspark` kernel).
-
-## Notebook overview
-The notebook contains (high-level):
-- Data ingestion and exploratory data analysis (EDA)
-- Data cleaning and transformation (using Spark/Pandas)
-- Aggregation and scalable computations
-- Modeling or statistical analysis (if applicable)
-- Visualizations and interpretation of results
-- Conclusions and future work
-
-Key headings discovered in the notebook (markdown):
-- ## Setup pyspark
-- ## Loading and understanding data
-- ## Summary:
-- ### Data Analysis Key Findings
-- ### Insights or Next Steps
-- ## Data Cleaning and Transformation
-- ## Exploratory Data Analysis (EDA)
-- ## Feature Engineering
-- ## Insights from Feature Engineering
-- ## Post-Feature Engineering - Distribution Analysis
-- ### Distribution of Engineered Features
-- ### Insights from Distribution Analysis of Engineered Features
-- ## Data Partitioning
-- ## Regression Task
-- ## Classification Task
-- ## Model Evaluation
-- ### Interpretation of Model Performance
-- ## Feature Importance Analysis
-- ### Insights from Feature Importance Analysis
-- ## Conclusion
-
-## Datasets
-https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data
-
-
-## Reproducibility tips
-- Pin package versions in `requirements.txt`.
-- If using Spark locally, document the Spark version and memory settings.
-- Provide sample subset datasets for quick testing (small CSVs) in `data/sample/`.
-
-## License
-This project is provided under the MIT License. Replace or change the license file as needed.
+- Loading data into a PySpark DataFrame
+- Schema inference and validation (all inferred as `double`)
+- Summary statistics and distribution inspection
+- No null values found across columns
+- Feature engineering (MA, Lag features, rolling metrics)
+- Regression & classification modeling
+- Feature importance evaluation
+- Advanced visualizations & correlation network analysis
 
 ---
 
+## Table of Contents
+- [About](#about)
+- [Repository Structure](#repository-structure)
+- [Requirements](#requirements)
+- [Setup and Run](#setup-and-run)
+- [Notebook Overview](#notebook-overview)
+- [Figures & Visualizations](#figures--visualizations)
+- [Datasets](#datasets)
+- [Reproducibility Tips](#reproducibility-tips)
+- [License](#license)
 
+---
+
+## About
+This repository demonstrates an end-to-end **big data analytics workflow** using PySpark.
+It covers data processing, scalable computation, modeling, and rich visualizations for time-series cryptocurrency analytics.
+
+---
+
+## Repository Structure
+```
+/                - repository root
+├─ pyspark-bigdata-analytics-engine.ipynb   - main notebook
+├─ data/                                     - dataset storage (not included)
+├─ figures/                                  - exported figures used in README
+├─ requirements.txt                           - library dependencies
+└─ README.md                                  - project documentation
+```
+
+---
+
+## Requirements
+Python libraries used in this project:
+
+`matplotlib`, `networkx`, `numpy`, `pandas`, `pyspark`, `scipy`, `seaborn`
+
+Install dependencies:
+
+```bash
+python -m venv venv
+source venv/bin/activate     # macOS/Linux
+venv\Scripts\activate        # Windows
+pip install -r requirements.txt
+```
+
+---
+
+## Setup and Run
+
+```bash
+git clone https://github.com/Saiful-Islam0/bigdata-pyspark-analytics-engine.git
+cd bigdata-pyspark-analytics-engine
+jupyter lab
+```
+
+Open the notebook and run all cells sequentially.
+
+---
+
+## Notebook Overview
+The workflow includes:
+
+- **Data ingestion & validation**
+- **EDA with summary statistics**
+- **Distribution analysis of engineered features**
+- **Feature engineering** (lag features, moving averages, volatility)
+- **Correlation & network visualization**
+- **Regression & classification models**
+- **Feature importance comparison (GBT vs Linear Regression)**
+- **Model evaluation & interpretation**
+
+---
+
+# 📊 Figures & Visualizations
+
+Below are all analysis and model-interpretation visuals included in the project.
+
+---
+
+### 📌 GBT Classification Feature Importance  
+<img src="figures/fgg1.png" width="800">
+
+---
+
+### 📌 Linear Regression Feature Importance  
+<img src="figures/fgg2.png" width="800">
+
+---
+
+### 📌 GBT Regression Feature Importance  
+<img src="figures/fgg3.png" width="800">
+
+---
+
+### 📌 Distribution Analysis — Volume_Lag1  
+<img src="figures/fgg4.png" width="900">
+
+---
+
+### 📌 Distribution Analysis — Close_MA30  
+<img src="figures/fgg5.png" width="900">
+
+---
+
+### 📌 Feature Correlation Network  
+<img src="figures/fgg6.png" width="650">
+
+---
+
+### 📌 30-Day Rolling Volatility of Bitcoin  
+<img src="figures/fgg7.png" width="900">
+
+---
+
+### 📌 Daily Bitcoin Price vs Volume  
+<img src="figures/fgg8.png" width="900">
+
+---
+
+### 📌 Bitcoin Price Trend (Log Scale)  
+<img src="figures/fgg9.png" width="900">
+
+---
+
+## Datasets
+Dataset Source:
+https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data
+
+---
+
+## Reproducibility Tips
+- Use fixed versions in `requirements.txt`
+- Document Spark version & configurations
+- Include sample datasets for lightweight testing
+
+---
+
+## License
+Licensed under the **MIT License**.
