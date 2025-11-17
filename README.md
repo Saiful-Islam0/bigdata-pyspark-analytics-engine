@@ -2,7 +2,7 @@
 
 **Course:** Big Data Lab  
 **Project type:** Final Group Project  
-**Notebook:** `BIGDATALABFINALGROUP.ipynb`
+**Notebook:** `pyspark-bigdata-analytics-engine.ipynb`
 
 ## Project summary
 Loading the dataset from the specified path into a PySpark DataFrame, inferring the schema, and then perform basic data inspection and null value check. *   The dataset contains 1-minute interval data for BTC/USD with columns: `Timestamp`, `Open`, `High`, `Low`, `Close`, and `Volume`. *   All columns were inferred as `double` type. *   The dataset contains no null values across any of its columns. *   Summary statistics provide insights into the range and central tendency of the numerical columns. *   The absence of null values indicates a clean dataset for initial analysis.
