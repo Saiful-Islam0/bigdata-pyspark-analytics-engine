@@ -63,8 +63,8 @@ Adjust the list depending on the notebook imports and whether you run on a local
 ## Setup and run
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>.git
-cd <your-repo-folder>
+git clone https://github.com/Saiful-Islam0/bigdata-pyspark-analytics-engine.git
+cd bigdata-pyspark-analytics-engine
 ```
 
 2. Place datasets in the `data/` folder. The notebook references dataset files; if you don't have them, update the paths accordingly.
